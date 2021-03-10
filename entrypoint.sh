@@ -49,7 +49,7 @@ echo "Copying files to git repo. Invisible files must be handled differently tha
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 
 for i in "$INPUT_SOURCE_FILE_PATH"/* ; do 
-  if [ test -f "$i" ]; then
+  if [ -f "$i" ]; then
     cp -r "$i" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
     echo "Copying $i"
   else
@@ -58,7 +58,7 @@ for i in "$INPUT_SOURCE_FILE_PATH"/* ; do
 done
 
 for i in "$INPUT_SOURCE_FILE_PATH"/.??* ; do 
-  if [ test -f "$i" ]; then
+  if [ -f "$i" ]; then
     cp -r "$i" "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
     echo "Copying $i"
   else
