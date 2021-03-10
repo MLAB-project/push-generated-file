@@ -48,8 +48,6 @@ echo "Copying files to git repo. Invisible files must be handled differently tha
 # Include dot files for source filepath
 mkdir -p $CLONE_DIR/$INPUT_DESTINATION_FOLDER
 
- && echo "exists one or more files" && break; done
-
 if [for i in "$INPUT_SOURCE_FILE_PATH"/*; do test -f "$i"]; then
   cp -r "$INPUT_SOURCE_FILE_PATH"/* "$CLONE_DIR/$INPUT_DESTINATION_FOLDER"
 else
